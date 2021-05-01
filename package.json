@@ -1,0 +1,17 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "A web application for keep list of tasks, you want to do.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webapp"
+  ],
+  "author": "Ashish Raghuvanshi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
