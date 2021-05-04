@@ -5,11 +5,61 @@
     <title>
         <%=title%>
     </title>
+    <link rel='stylesheet' type='text/css' href="/css/home.css">
+    <script src="https://kit.fontawesome.com/cc26b0a284.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>TO DO APP | <%=title%>
-    </h1>
+
+    <div id="main-container">
+
+        <header id="main-heading">
+            <h1>TODO App</h1>
+        </header>
+        <section id="form-section">
+            <form>
+                <div id="descriptionContainer">
+                    <h4>DESCRIPTION</h4>
+                    <textarea rows="2" cols="40" placeholder="What do you need to do?" required></textarea>
+                </div>
+                <div id="categoryAndDueDateContainer">
+                    <div id="categoryContainer">
+                        <h4>CATEGORY</h4>
+                        <select name="category" required>
+                            <option value="" selected>choose a category</option>
+                            <option value="personal">personal</option>
+                            <option value="work">work</option>
+                            <option value="meeting">meeting</option>
+                            <option value="Home">Home</option>
+
+                        </select>
+                    </div>
+                    <div id="duedate">
+                        <h4>DUE DATE</h4>
+                        <input type="date" name="due_date" required>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+        <section id="addAndDelBtn">
+            <div id="add_btn_container" class="styleForBtn">
+                <button id="add_btn" type="button">
+                    <i class="fas fa-plus"></i>
+                    ADD TASK
+                </button>
+            </div>
+            <div id="del_btn_container" class="styleForBtn">
+                <button id="del">
+                    <i class="fas fa-trash-alt"></i>
+                    Delete TASK
+                </button>
+            </div>
+        </section>
+        <section id="checkbox">
+
+        </section>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,95 @@
+
+/* ----------------------main body------------------------------------- */
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    color:#6e6d6f;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #808080;
+}
+/* -------------------------main-container-------------------------------------- */
+#main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    background-color: #ffffff;
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* -------------------------------form section------------------------------ */
+#form-section{
+    width: 100%;
+ 
+}
+#descriptionContainer{
+    border-top: 1px solid lightgrey;
+    width: 100%;
+    border-bottom: 1px solid lightgrey ;
+}
+#descriptionContainer textarea{
+    border: none;
+    width: 99%;
+    resize: none;
+}
+#descriptionContainer textarea:focus{
+    outline: none;
+}
+#descriptionContainer textarea::placeholder{
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#categoryAndDueDateContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid lightgray;
+}
+#categoryContainer{
+    width: 50%;
+    border-right: 1px solid lightgrey;
+
+}
+#categoryContainer select, #duedate input{
+    border: none;
+    font-weight: bolder;
+    color: darkgray;
+    font-size: 1rem;
+
+}
+#duedate{
+    width: 50%;
+    margin-left: 20px;
+}
+
+/* ------------------------------button section-----------------------------------
+ */
+ #addAndDelBtn{
+     display: flex;
+     margin-top: 40px;
+     
+ }
+ 
+ #add_btn_container #add_btn{
+     background-color: #444444;
+ }
+
+ #del_btn_container button{
+    background-color: #ee351e;
+
+    margin-left: 10px;
+}
+.styleForBtn button{
+    width: 150px;
+    height: 60px;
+    color: white;
+    font-size: large;
+    font-weight: lighter;
+}

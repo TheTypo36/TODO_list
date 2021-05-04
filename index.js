@@ -5,6 +5,11 @@ const app = express();
 const port = 8000;
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+//for using local static file
+app.use(express.static('./assets'));
+
+
 app.use('/', require('./routes/index.js'));
 app.listen(port, function (err) {
     if (err) {
