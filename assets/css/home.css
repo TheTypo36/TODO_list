@@ -36,6 +36,11 @@ body{
     border: none;
     width: 99%;
     resize: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkgray;
+    font-size: 1rem;
+    font-weight: bold;
+
 }
 #descriptionContainer textarea:focus{
     outline: none;

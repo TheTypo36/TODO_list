@@ -10,3 +10,5 @@ for (let i of catEle) {
         i.style.backgroundColor = "cyan";
     }
 }
+
+$('textarea').autoresize();

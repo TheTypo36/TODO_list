@@ -1,3 +1,4 @@
+
 var taskList = [
     {
         task: "Go for running",
@@ -11,10 +12,20 @@ var taskList = [
     },
 
 ]
+// app.post('/add-task', function (req, res) {
+//     console.log(req.body);
+// });
 module.exports.home = function (req, res) {
     res.render('home', {
         title: "Home",
         task_list: taskList
 
     });
+}
+module.exports.update = function (req, res) {
+    taskList.push(req.body);
+    res.redirect('back');
+}
+module.exports.del = function (req, res) {
+
 }
