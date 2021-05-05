@@ -1,3 +1,4 @@
+const { query } = require('express');
 const Task = require('../models/task');
 var taskList = [
     {
@@ -41,5 +42,16 @@ module.exports.update = function (req, res) {
         }
         console.log('********', newContact);
         res.redirect('back');
+    });
+}
+module.exports.del = function (req, res) {
+    let id = req.query.id;
+    // console.log(id);
+    Task.findByIdAndDelete(id, function (err) {
+        if (err) {
+            console.log('err in delete the task from databse');
+            return;
+        }
+        return res.redirect('back');
     });
 }

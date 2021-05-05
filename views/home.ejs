@@ -51,31 +51,34 @@
             </div>
             </form>
             <div id="del_btn_container" class="styleForBtn">
-                <button id="del" type="submit">
+                <button id="del" type="submit" form="myform">
                     <i class="fas fa-trash-alt"></i>
                     DELETE TASK
                 </button>
             </div>
         </section>
         <section id="checkbox">
+
             <% for( let i of task_list){ %>
-                <div class="task-container">
-                    <input type="checkbox" class="check" name="task">
-                    <div class="task-date">
+                <form id="myform" action="/delete-task/?id=<%=i._id %>" method="POST">
+                    <div class="task-container">
+                        <input type="checkbox" class="check" name="task">
+                        <div class="task-date">
 
-                        <div class="task">
-                            <%= i.task %>
+                            <div class="task">
+                                <%= i.task %>
+                            </div>
+                            <div class="date-label">
+                                <i class="far fa-calendar-alt"></i>
+                                <%=i.date%>
+                            </div>
                         </div>
-                        <div class="date-label">
-                            <i class="far fa-calendar-alt"></i>
-                            <%=i.date%>
+                        <div class="category-label-container">
+                            <%= i.category %>
+
                         </div>
                     </div>
-                    <div class="category-label-container">
-                        <%= i.category %>
-
-                    </div>
-                </div>
+                </form>
                 <%} %>
         </section>
     </div>
