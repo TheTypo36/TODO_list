@@ -1,4 +1,4 @@
-
+const Task = require('../models/task');
 var taskList = [
     {
         task: "Go for running",
@@ -16,16 +16,30 @@ var taskList = [
 //     console.log(req.body);
 // });
 module.exports.home = function (req, res) {
-    res.render('home', {
-        title: "Home",
-        task_list: taskList
+    Task.find({}, function (err, tasks) {
+        if (err) {
+            console.log('Error in fetching tasks from db');
+            return;
+        }
+        res.render('home', {
+            title: "Home",
+            task_list: tasks
+        });
+
 
     });
 }
 module.exports.update = function (req, res) {
-    taskList.push(req.body);
-    res.redirect('back');
-}
-module.exports.del = function (req, res) {
-
+    Task.create({
+        task: req.body.task,
+        category: req.body.category,
+        date: req.body.date
+    }, function (err, newContact) {
+        if (err) {
+            console.log('error in creating a contact!');
+            return;
+        }
+        console.log('********', newContact);
+        res.redirect('back');
+    });
 }
