@@ -1,21 +1,23 @@
 const { query } = require('express');
 const Task = require('../models/task');
-var taskList = [
-    {
-        task: "Go for running",
-        category: "work",
-        date: "1 may, 2021"
-    },
-    {
-        task: "make a coffee",
-        category: "Home",
-        date: "5 may, 2021"
-    },
+// var taskList = [
+//     {
+//         task: "Go for running",
+//         category: "work",
+//         date: "1 may, 2021"
+//     },
+//     {
+//         task: "make a coffee",
+//         category: "Home",
+//         date: "5 may, 2021"
+//     },
 
-]
+// ]
 // app.post('/add-task', function (req, res) {
 //     console.log(req.body);
 // });
+
+//setting up home view
 module.exports.home = function (req, res) {
     Task.find({}, function (err, tasks) {
         if (err) {
@@ -30,6 +32,8 @@ module.exports.home = function (req, res) {
 
     });
 }
+
+//code for updating the task list
 module.exports.update = function (req, res) {
     Task.create({
         task: req.body.task,
@@ -44,6 +48,8 @@ module.exports.update = function (req, res) {
         res.redirect('back');
     });
 }
+
+//code for deleting the tasklist
 module.exports.del = function (req, res) {
     let id = req.query.id;
     // console.log(id);

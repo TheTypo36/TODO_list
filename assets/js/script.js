@@ -1,3 +1,4 @@
+//code for different color for different category
 var catEle = document.getElementsByClassName('category-label-container');
 
 for (let i of catEle) {
@@ -11,4 +12,12 @@ for (let i of catEle) {
     }
 }
 
-$('textarea').autoresize();
+//code for line through when the task is clicked
+
+var taskContainer = document.getElementsByClassName('task-container');
+for (let i of taskContainer) {
+    i.addEventListener('click', function () {
+        i.style.textDecoration = "line-through";
+        i.style.cursor = "pointer";
+    });
+}

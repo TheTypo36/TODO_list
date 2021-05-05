@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//schema for define field for collection
 const taskSchema = new mongoose.Schema({
     task: {
         type: String,
