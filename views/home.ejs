@@ -17,26 +17,27 @@
             <h1>TODO App</h1>
         </header>
         <section id="form-section">
-            <form>
+            <form action="" method="POST">
                 <div id="descriptionContainer">
                     <h4>DESCRIPTION</h4>
-                    <textarea rows="2" cols="40" placeholder="What do you need to do?" required></textarea>
+                    <textarea rows="2" cols="40" name="task" placeholder="What do you need to do?" required></textarea>
                 </div>
                 <div id="categoryAndDueDateContainer">
                     <div id="categoryContainer">
                         <h4>CATEGORY</h4>
                         <select name="category" required>
                             <option value="" selected>choose a category</option>
-                            <option value="personal">personal</option>
-                            <option value="work">work</option>
-                            <option value="meeting">meeting</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="meeting">Meeting</option>
                             <option value="Home">Home</option>
 
                         </select>
                     </div>
                     <div id="duedate">
                         <h4>DUE DATE</h4>
-                        <input type="date" name="due_date" required>
+
+                        <input type="date" name="date" required>
                     </div>
                 </div>
 
@@ -52,14 +53,34 @@
             <div id="del_btn_container" class="styleForBtn">
                 <button id="del">
                     <i class="fas fa-trash-alt"></i>
-                    Delete TASK
+                    DELETE TASK
                 </button>
             </div>
         </section>
         <section id="checkbox">
 
+            <% for( let i of task_list){ %>
+                <div class="task-container">
+                    <input type="checkbox" class="check">
+                    <div class="task-date">
+
+                        <div class="task">
+                            <%= i.task %>
+                        </div>
+                        <div class="date-label">
+                            <i class="far fa-calendar-alt"></i>
+                            <%=i.date%>
+                        </div>
+                    </div>
+                    <div class="category-label-container">
+                        <%= i.category %>
+
+                    </div>
+                </div>
+                <%} %>
         </section>
     </div>
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 
 </html>
